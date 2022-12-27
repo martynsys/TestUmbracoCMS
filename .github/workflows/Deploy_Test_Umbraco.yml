@@ -6,18 +6,22 @@ on:
   push:
     branches:
       - master
-  workflow_dispatch:
+
 
 jobs:
   deploy:
     runs-on: windows-latest
 
     steps:
+     
+      - name: Look files
+        run: ls
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: ASP-app
-          path: '.'
+          path: '/'
         
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
