@@ -14,6 +14,9 @@ jobs:
 
     steps:
      
+      - name: Checkout
+        uses: actions/checkout@v2.6.0
+     
       - name: Look files
         run: ls
         
